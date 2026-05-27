@@ -16,8 +16,9 @@ public class StudentController {
     @GetMapping("/students")
     public List<Student> getAllStudents() {
         //YOUR CODE STARTS HERE
-
-        return null;
+        
+        List<Student> students = studentServiceImpl.getAllStudents();
+        return students;
 
         //YOUR CODE ENDS HERE
     }
@@ -25,8 +26,9 @@ public class StudentController {
     @PostMapping("/add")
     public Student addStudent(@RequestBody Student student) {
         //YOUR CODE STARTS HERE
-
-        return null;
+        
+        Student studentResult = studentServiceImpl.addNewStudent(student);
+        return studentResult;
 
         //YOUR CODE ENDS HERE
     }
@@ -35,7 +37,8 @@ public class StudentController {
     public Student getStudentById(@PathVariable int id) {
         //YOUR CODE STARTS HERE
 
-        return null;
+        Student studentResult = studentServiceImpl.getStudentById(id);
+        return studentResult;
 
         //YOUR CODE ENDS HERE
     }
@@ -44,7 +47,8 @@ public class StudentController {
     public Student updateStudent(@PathVariable int id, @RequestBody Student student) {
         //YOUR CODE STARTS HERE
 
-        return null;
+        Student studentResult = studentServiceImpl.updateStudentData(id, student);
+        return studentResult;
 
         //YOUR CODE ENDS HERE
     }
@@ -53,7 +57,7 @@ public class StudentController {
     public void deleteStudent(@PathVariable int id) {
         //YOUR CODE STARTS HERE
 
-
+        studentServiceImpl.deleteStudentById(id);
 
         //YOUR CODE ENDS HERE
     }
@@ -62,7 +66,7 @@ public class StudentController {
     public void deleteStudentFromCourse(@PathVariable int studentId, @PathVariable int courseId) {
         //YOUR CODE STARTS HERE
 
-
+        studentServiceImpl.deleteStudentFromCourse(studentId, courseId);
 
         //YOUR CODE ENDS HERE
     }
@@ -71,7 +75,7 @@ public class StudentController {
     public void addStudentToCourse(@PathVariable int studentId, @PathVariable int courseId) {
         //YOUR CODE STARTS HERE
 
-
+        studentServiceImpl.addStudentToCourse(studentId, courseId);
 
         //YOUR CODE ENDS HERE
     }
